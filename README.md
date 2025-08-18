@@ -1,4 +1,6 @@
-X-HR Agent MVP
+
+
+# X-HR Agent MVP
 
 An AI-Powered Recruitment Platform for SMEs, designed to streamline the hiring process from CV parsing to candidate matching.
 
@@ -8,10 +10,10 @@ This repository contains the full specification and runnable Minimum Viable Prod
 
 ## ✨ Core Features
 
-* **🤖 AI-Powered CV Processing:** Ingests resumes in multiple formats (PDF, DOCX, images) and uses OCR and NER to extract structured data like skills, experience, and contact information.
-* **🎯 Explainable Job Matching:** Utilizes a hybrid model combining semantic similarity (via text embeddings) and direct skill overlap to rank candidates. Crucially, it provides a clear rationale for each match score.
-* **🗣️ Interview Simulation:** Employs an LLM to generate job-relevant questions and provides a preliminary screening of candidates through a text-based simulated interview.
-* **📊 SME-Focused Dashboard:** A clean, intuitive UI for managing job postings, viewing ranked candidate lists, and tracking applicants. Includes basic analytics on hiring performance.
+*   **🤖 AI-Powered CV Processing:** Ingests resumes in multiple formats (PDF, DOCX, images) and uses OCR and NER to extract structured data like skills, experience, and contact information.
+*   **🎯 Explainable Job Matching:** Utilizes a hybrid model combining semantic similarity (via text embeddings) and direct skill overlap to rank candidates. Crucially, it provides a clear rationale for each match score.
+*   **🗣️ Interview Simulation:** Employs an LLM to generate job-relevant questions and provides a preliminary screening of candidates through a text-based simulated interview.
+*   **📊 SME-Focused Dashboard:** A clean, intuitive UI for managing job postings, viewing ranked candidate lists, and tracking applicants. Includes basic analytics on hiring performance.
 
 ---
 
@@ -19,24 +21,24 @@ This repository contains the full specification and runnable Minimum Viable Prod
 
 The project follows a modern, containerized microservices architecture to ensure scalability and separation of concerns.
 
-* **Frontend:**
-  * **Framework:** React (with Vite)
-  * **Styling:** Tailwind CSS (or as specified)
-  * **API Communication:** Axios
-* **Backend (API Gateway):**
-  * **Framework:** Python 3.8+ with FastAPI
-  * **Data Validation:** Pydantic
-  * **ASGI Server:** Uvicorn
-* **Database:**
-  * **Primary:** MongoDB (for storing jobs, candidates, user data)
-  * **Object Storage:** MinIO / S3 (for storing raw CV files)
-* **AI Services:**
-  * **NLP/NER:** spaCy
-  * **Embeddings:** SentenceTransformers (or similar)
-  * **Interview Sim:** A fine-tuned Large Language Model (e.g., from Hugging Face)
-* **Deployment:**
-  * **Containerization:** Docker & Docker Compose
-  * **Web Server (Frontend):** Vite
+*   **Frontend:**
+    *   **Framework:** React (with Vite)
+    *   **Styling:** Tailwind CSS (or as specified)
+    *   **API Communication:** Axios
+*   **Backend (API Gateway):**
+    *   **Framework:** Python 3.8+ with FastAPI
+    *   **Data Validation:** Pydantic
+    *   **ASGI Server:** Uvicorn
+*   **Database:**
+    *   **Primary:** MongoDB (for storing jobs, candidates, user data)
+    *   **Object Storage:** MinIO / S3 (for storing raw CV files)
+*   **AI Services:**
+    *   **NLP/NER:** spaCy
+    *   **Embeddings:** SentenceTransformers (or similar)
+    *   **Interview Sim:** A fine-tuned Large Language Model (e.g., from Hugging Face)
+*   **Deployment:**
+    *   **Containerization:** Docker & Docker Compose
+    *   **Web Server (Frontend):** Vite
 
 ---
 
@@ -46,9 +48,9 @@ These instructions will guide you through running the simplified MVP codebase on
 
 ### Prerequisites
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (v16 or higher)
-* [Python](https://www.python.org/) (v3.8 or higher) and `pip`
+*   [Git](https://git-scm.com/)
+*   [Node.js](https://nodejs.org/) (v16 or higher)
+*   [Python](https://www.python.org/) (v3.8 or higher) and `pip`
 
 ### 1. Installation
 
@@ -57,18 +59,13 @@ First, clone the repository and navigate into the project directory.
 ```bash
 git clone <your-repository-url>
 cd xhr-agent-mvp
+```
 
 Next, set up the backend and frontend environments in two separate terminals.
 
-Terminal 1: Backend Setup
+**Terminal 1: Backend Setup**
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```bash
 # Navigate to the backend directory
 cd backend
 
@@ -81,75 +78,56 @@ python -m venv venv
 
 # Install the required Python packages
 pip install -r requirements.txt
+```
 
-Terminal 2: Frontend Setup
+**Terminal 2: Frontend Setup**
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```bash
 # Navigate to the frontend directory
 cd frontend
 
 # Install the required Node.js packages
 npm install
-2. Running the Application
+```
+
+### 2. Running the Application
 
 Now, start both the backend and frontend servers.
 
-Terminal 1: Start the Backend
+**Terminal 1: Start the Backend**
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```bash
 # Make sure you are in the `backend` directory with the venv activated
 uvicorn app.main:app --reload
+```
 
-Your FastAPI server should now be running at http://127.0.0.1:8000.
+Your FastAPI server should now be running at `http://127.0.0.1:8000`.
 
-Terminal 2: Start the Frontend
+**Terminal 2: Start the Frontend**
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```bash
 # Make sure you are in the `frontend` directory
 npm run dev
+```
 
-Your React application should automatically open in your browser at http://localhost:5173.
+Your React application should automatically open in your browser at `http://localhost:5173`.
 
-3. Using the MVP
+### 3. Using the MVP
 
-The dashboard will load in your browser.
+1. The dashboard will load in your browser.
+2. Use the "Create a New Job" card to define a job title.
+3. Use the "Upload a Candidate CV" card to upload a dummy file.
+4. The status message at the top will provide feedback on each action.
 
-Use the "Create a New Job" card to define a job title.
+---
 
-Use the "Upload a Candidate CV" card to upload a dummy file.
+## 📁 Project Structure
 
-The status message at the top will provide feedback on each action.
+The codebase is organized into two main parts: `backend` and `frontend`, with a professional, scalable structure.
 
-📁 Project Structure
+### Backend Structure
 
-The codebase is organized into two main parts: backend and frontend, with a professional, scalable structure.
-
-Backend Structure
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```
 backend/
 ├── app/                  # Main application source code
 │   ├── api/              # API endpoints (routers)
@@ -159,14 +137,11 @@ backend/
 │   ├── services/         # Business logic (e.g., calling AI models)
 │   └── main.py           # Main FastAPI app entry point
 └── requirements.txt      # Python dependencies
-Frontend Structure
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+```
+
+### Frontend Structure
+
+```
 frontend/
 ├── public/               # Static assets
 ├── src/                  # Main application source code
@@ -177,29 +152,27 @@ frontend/
 │   └── main.jsx          # Application entry point
 ├── package.json          # Project dependencies and scripts
 └── vite.config.js        # Vite build configuration
-🔮 Future Work (Deferred Features)
+```
+
+---
+
+## 🔮 Future Work (Deferred Features)
 
 The current MVP provides the core foundation. Future development will focus on:
 
-Video interview analysis
+- Video interview analysis
+- Chrome extension for sourcing candidates
+- Advanced bias detection and mitigation tools
+- Real-time job board scraping
 
-Chrome extension for sourcing candidates
+---
 
-Advanced bias detection and mitigation tools
+## 📜 License
 
-Real-time job board scraping
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-📜 License
+```
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
 ---
 
 ### **Next Steps (The Final Commands)**
