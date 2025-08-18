@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python - multipart
+numpy
+passlib [ bcrypt ]
+python - jose [ cryptography ]
+pydantic [ email ]
