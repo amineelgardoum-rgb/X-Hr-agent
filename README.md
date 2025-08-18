@@ -171,7 +171,5 @@ The current MVP provides the core foundation. Future development will focus on:
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-```
-
 
 
