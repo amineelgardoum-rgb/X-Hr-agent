@@ -1,0 +1,5 @@
+FROM python:3.9-slim
+COPY requirements.txt .
+RUN pip install  requirements.txt
+COPY . .
+CMD [ "python","-u","main.py" ]
