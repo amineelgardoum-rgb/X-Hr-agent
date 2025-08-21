@@ -57,8 +57,8 @@ These instructions will guide you through running the simplified MVP codebase on
 First, clone the repository and navigate into the project directory.
 
 ```bash
-git clone <your-repository-url>
-cd xhr-agent-mvp
+git clone https://github.com/amineelgardoum-rgb/X-Hr-agent
+cd X-Hr-agent
 ```
 
 Next, set up the backend and frontend environments in two separate terminals.
